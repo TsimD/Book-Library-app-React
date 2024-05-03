@@ -1,0 +1,46 @@
+.book_form {
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 3px hsla(0, 0%, 0%, 0.518);
+  padding: 5px;
+}
+.title {
+  font-size: large;
+  font-style: italic;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_input {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.title_input label {
+  margin-right: 50px;
+}
+
+.autor_input {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.autor_input label {
+  margin-right: 50px;
+}
+
+.btn {
+  width: 150px;
+  margin: 5px;
+  background-color: #0d94f4;
+  color: white;
+  font-size: medium;
+  border-radius: 10px;
+}
+.btn:hover {
+  box-shadow: 1px 1px 2px hsla(0, 2%, 37%, 0.582);
+  background-color: #39adff;
+}

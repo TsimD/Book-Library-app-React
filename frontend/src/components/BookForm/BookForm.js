@@ -1,23 +1,31 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addBook } from "../../redux/books/actionCreators";
+import s from "./BookForm.module.css";
 
 const BookForm = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && author) {
-      //dispatch actions
-      console.log(title, author); // test
+      const book = {
+        title,
+        author,
+      };
+
+      dispatch(addBook(book));
       setTitle("");
       setAuthor("");
     }
   };
   return (
-    <div className="book-form">
-      <h2>Add new book</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={s.book_form}>
+      <h2 className={s.title}>Add new book</h2>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <div className={s.title_input}>
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -26,7 +34,7 @@ const BookForm = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
+        <div className={s.autor_input}>
           <label htmlFor="author">Author</label>
           <input
             type="text"
@@ -35,7 +43,9 @@ const BookForm = () => {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <button type="submit">Add Book</button>
+        <button className={s.btn} type="submit">
+          Add Book
+        </button>
       </form>
     </div>
   );
